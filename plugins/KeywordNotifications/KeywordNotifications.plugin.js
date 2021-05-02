@@ -3,7 +3,7 @@
  * @donate https://paypal.me/goldenchrysus
  * @patreon https://www.patreon.com/Chrysus
  * @website https://github.com/GoldenChrysus
- * @source https://github.com/GoldenChrysus/BetterDiscordPlugins/blob/main/plugins/KeywordNotifications/
+ * @source https://github.com/GoldenChrysus/BetterDiscordPlugins/tree/main/plugins/KeywordNotifications
  * @updateUrl https://raw.githubusercontent.com/GoldenChrysus/BetterDiscordPlugins/main/plugins/KeywordNotifications/KeywordNotifications.plugin.js
  */
 
@@ -19,9 +19,17 @@
 				 name: "GoldenChrysus"
 			 }
 		 ],
-		 version     : "0.0.1",
+		 version     : "0.0.2",
 		 description : "Displays notifications when certain keywords are mentioned in messages.",
 	 },
+	 changelog : [
+		{
+			title : "Added server list",
+			items : [
+				"You can choose which servers alerts are enabled for"
+			]
+		}
+	 ],
 	 defaultConfig : [
 		 {
 			 type  : "textbox",

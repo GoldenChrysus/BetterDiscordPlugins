@@ -486,6 +486,10 @@
 						for (let keyword of keywords) {
 							keyword = this.escapeRegex(keyword.toLowerCase().trim());
 
+							if (keyword.length === 0) {
+								continue;
+							}
+
 							let regex = new RegExp(`\\b${keyword}\\b`, "g");
  
 							if (regex.test(content)) {

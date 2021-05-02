@@ -19,7 +19,7 @@
 				name: "GoldenChrysus"
 			}
 		],
-		version     : "0.0.3",
+		version     : "0.0.4",
 		description : "Displays notifications when certain keywords are mentioned in messages.",
 		github_raw  : "https://raw.githubusercontent.com/GoldenChrysus/BetterDiscordPlugins/main/plugins/KeywordNotifications/KeywordNotifications.plugin.js"
 	},
@@ -68,7 +68,7 @@
 	:
 		(
 			([Plugin, Library]) => {
-				const { DiscordAPI, DiscordModules, WebpackModules, PluginUtilities, Settings, Structs } = Library;
+				const { DiscordAPI, DiscordModules, WebpackModules, PluginUtilities, Settings } = Library;
 				const { React, ReactDOM, Dispatcher, NavigationUtils, UserStore } = DiscordModules;
  
 				const classes = {
@@ -483,7 +483,6 @@
  
 						const content  = message.content.toLowerCase();
 						const author   = UserStore.getUser(message.author.id);
-						const channel  = Structs.Channel.fromId(message.channel_id);
 						const keywords = this.settings.keywords.split(",");
  
 						for (let keyword of keywords) {
@@ -504,7 +503,7 @@
 										author  : author.tag,
 										time    : 5000,
 										onClick : () => {
-											NavigationUtils.transitionToGuild((channel.guild_id || "@me"), message.channel_id, message.id);
+											NavigationUtils.transitionToGuild(message.guild_id, message.channel_id, message.id);
 										},
 									}
 								);

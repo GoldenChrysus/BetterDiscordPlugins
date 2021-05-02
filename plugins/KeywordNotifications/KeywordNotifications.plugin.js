@@ -44,7 +44,7 @@
 			load() {
 				BdApi.showConfirmationModal(
 					"Library plugin is needed",
-					`The library plugin needed for KeywordNotifications is missing. Please click download to install it.`,
+					`The library plugin needed for KeywordNotifications is missing. Please click "Download" to install it.`,
 					{
 						confirmText : "Download",
 						cancelText  : "Cancel",

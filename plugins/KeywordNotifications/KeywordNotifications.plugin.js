@@ -495,7 +495,10 @@
 							let regex = new RegExp(`\\b${keyword}\\b`, "g");
  
 							if (regex.test(content)) {
-								Library.DiscordModules.SoundModule.playSound("message1");
+								if (DiscordAPI.currentUser.status !== "dnd") {
+									Library.DiscordModules.SoundModule.playSound("message1");
+								}
+
 								QWERTLib.Toasts.create(
 									`"${keyword}" mentioned: ${content}`,
 									{

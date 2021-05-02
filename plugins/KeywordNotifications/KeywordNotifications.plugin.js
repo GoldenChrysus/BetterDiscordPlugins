@@ -19,10 +19,16 @@
 				 name: "GoldenChrysus"
 			 }
 		 ],
-		 version     : "0.0.2",
+		 version     : "0.0.3",
 		 description : "Displays notifications when certain keywords are mentioned in messages.",
 	 },
 	 changelog : [
+		{
+			title : "Test changelog",
+			items : [
+				"Testing"
+			]
+		},
 		{
 			title : "Added server list",
 			items : [

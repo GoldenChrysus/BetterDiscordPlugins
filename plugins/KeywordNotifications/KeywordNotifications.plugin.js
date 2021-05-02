@@ -484,7 +484,7 @@
 						const keywords = this.settings.keywords.split(",");
  
 						for (let keyword of keywords) {
-							keyword = this.escapeRegex(keyword.toLowerCase());
+							keyword = this.escapeRegex(keyword.toLowerCase().trim());
 
 							let regex = new RegExp(`\\b${keyword}\\b`, "g");
  

@@ -1,0 +1,2 @@
+# BetterDiscordPlugins
+BetterDiscord plugins.

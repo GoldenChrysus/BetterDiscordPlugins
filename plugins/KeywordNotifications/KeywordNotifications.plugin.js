@@ -19,10 +19,18 @@
 				name: "GoldenChrysus"
 			}
 		],
-		version     : "0.0.4",
+		version     : "0.1.0",
 		description : "Displays notifications when certain keywords are mentioned in messages.",
 		github_raw  : "https://raw.githubusercontent.com/GoldenChrysus/BetterDiscordPlugins/main/plugins/KeywordNotifications/KeywordNotifications.plugin.js"
 	},
+	changelog : [
+		{
+			title : "Features",
+			items : [
+				"Added setting to keep alerts open until closed"
+			]
+		}
+	],
 	defaultConfig : [
 		{
 			type  : "textbox",
@@ -145,7 +153,7 @@
 						},
  
 						Toast: function Toast(props) {
-							const {children = [], avatar, id, author, onClick = _ => {}, color, time = 3000, onManualClose} = props;
+							const {children = [], avatar, id, author, onClick = _ => {}, color, time = 3000} = props;
 							const [readyToClose, setReadyToClose] = useState(false);
  
 							useEffect(_ => {
@@ -172,10 +180,14 @@
 									scale    : (readyToClose) ? 1 : 0
 								},
 								to: {
-									progress : 100,
+									progress : (time === -1) ? 0 : 100,
 									scale    : (readyToClose) ? 0 : 1
 								},
 								onRest: _ => {
+									if (time === -1) {
+										return;
+									}
+
 									setReadyToClose(true);
 								},
 								config: key => {
@@ -244,7 +256,6 @@
 											width: "16", height: "16", 
 											viewBox: "0 0 24 24", 
 											onClick: function() {
-												onManualClose();
 												setReadyToClose(true);
 											}, 
 										},
@@ -438,6 +449,15 @@
 								this.settings.keywords = text;
 							}
 						));
+
+						list.push(new Settings.Switch(
+							"Persistent Alerts",
+							"Alerts will stay open until closed",
+							this.settings.persistent,
+							(enabled) => {
+								this.settings.persistent = enabled;
+							}
+						));
  
 						let server_group = new Settings.SettingGroup(
 							"servers",
@@ -504,7 +524,7 @@
 									{
 										avatar  : author.avatarURL,
 										author  : author.tag,
-										time    : 5000,
+										time    : (this.settings.persistent) ? -1 : 5000,
 										onClick : () => {
 											NavigationUtils.transitionToGuild(message.guild_id, message.channel_id, message.id);
 										},

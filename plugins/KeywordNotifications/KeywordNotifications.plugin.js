@@ -3,7 +3,7 @@
  * @donate https://paypal.me/goldenchrysus
  * @patreon https://www.patreon.com/Chrysus
  * @website https://github.com/GoldenChrysus
- * @source https://github.com/GoldenChrysus/BetterDiscordPlugins/tree/main/plugins/KeywordNotifications
+ * @source https://raw.githubusercontent.com/GoldenChrysus/BetterDiscordPlugins/main/plugins/KeywordNotifications/KeywordNotifications.plugin.js
  * @updateUrl https://raw.githubusercontent.com/GoldenChrysus/BetterDiscordPlugins/main/plugins/KeywordNotifications/KeywordNotifications.plugin.js
  */
 

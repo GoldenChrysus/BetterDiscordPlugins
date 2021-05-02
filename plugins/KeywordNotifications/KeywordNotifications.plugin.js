@@ -3,7 +3,8 @@
  * @donate https://paypal.me/goldenchrysus
  * @patreon https://www.patreon.com/Chrysus
  * @website https://github.com/GoldenChrysus
- * @source https://github.com/GoldenChrysus/BetterDiscordPlugins/tree/main/Plugins/KeywordNotifications/
+ * @source https://github.com/GoldenChrysus/BetterDiscordPlugins/blob/main/plugins/KeywordNotifications/
+ * @updateUrl https://raw.githubusercontent.com/GoldenChrysus/BetterDiscordPlugins/main/plugins/KeywordNotifications/KeywordNotifications.plugin.js
  */
 
  const request = require("request");

@@ -19,23 +19,10 @@
 				 name: "GoldenChrysus"
 			 }
 		 ],
-		 version     : "0.0.3",
+		 version     : "0.0.1",
 		 description : "Displays notifications when certain keywords are mentioned in messages.",
+		 github_raw  : "https://raw.githubusercontent.com/GoldenChrysus/BetterDiscordPlugins/main/plugins/KeywordNotifications/KeywordNotifications.plugin.js"
 	 },
-	 changelog : [
-		{
-			title : "Test changelog",
-			items : [
-				"Testing"
-			]
-		},
-		{
-			title : "Added server list",
-			items : [
-				"You can choose which servers alerts are enabled for"
-			]
-		}
-	 ],
 	 defaultConfig : [
 		 {
 			 type  : "textbox",

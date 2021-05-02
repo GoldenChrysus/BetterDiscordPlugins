@@ -19,7 +19,7 @@
 				name: "GoldenChrysus"
 			}
 		],
-		version     : "0.0.2",
+		version     : "0.0.3",
 		description : "Displays notifications when certain keywords are mentioned in messages.",
 		github_raw  : "https://raw.githubusercontent.com/GoldenChrysus/BetterDiscordPlugins/main/plugins/KeywordNotifications/KeywordNotifications.plugin.js"
 	},
@@ -42,20 +42,23 @@
 			}
  
 			load() {
-				BdApi.showConfirmationModal("Library plugin is needed",
-					`The library plugin needed for AQWERT'sPluginBuilder is missing. Please click Download Now to install it.`, {
-					confirmText : "Download",
-					cancelText  : "Cancel",
-					onConfirm   : () => {
-						request.get("https://rauenzi.github.io/BDPluginLibrary/release/0PluginLibrary.plugin.js", (error, response, body) => {
-							if (error) {
-								return electron.shell.openExternal("https://betterdiscord.net/ghdl?url=https://raw.githubusercontent.com/rauenzi/BDPluginLibrary/master/release/0PluginLibrary.plugin.js");
-							}
- 
-							fs.writeFileSync(path.join(BdApi.Plugins.folder, "0PluginLibrary.plugin.js"), body);
-						});
+				BdApi.showConfirmationModal(
+					"Library plugin is needed",
+					`The library plugin needed for KeywordNotifications is missing. Please click download to install it.`,
+					{
+						confirmText : "Download",
+						cancelText  : "Cancel",
+						onConfirm   : () => {
+							request.get("https://rauenzi.github.io/BDPluginLibrary/release/0PluginLibrary.plugin.js", (error, response, body) => {
+								if (error) {
+									return electron.shell.openExternal("https://betterdiscord.net/ghdl?url=https://raw.githubusercontent.com/rauenzi/BDPluginLibrary/master/release/0PluginLibrary.plugin.js");
+								}
+	
+								fs.writeFileSync(path.join(BdApi.Plugins.folder, "0PluginLibrary.plugin.js"), body);
+							});
+						}
 					}
-				});
+				);
 			}
  
 			start() {}
